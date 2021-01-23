@@ -1,9 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMoon } from '@fortawesome/free-solid-svg-icons';
+// import { faSun } from '@fortawesome/free-solid-svg-icons';
 import '../styles/_app.scss';
+import { ButtonTheme } from './ButtonTheme';
 
 function App() {
+
+  console.log("Render: App/components/App.js");
+
   return (
     <div className="app">
       <div className="level">
@@ -12,10 +17,8 @@ function App() {
         </div>
 
         {/* --The button that should toggle dark mode-- */}
-        <button className="app__dark-mode-btn icon level-right">
-          <FontAwesomeIcon icon={faMoon} />
-        </button>
-
+        {/* --NOTE: se creo un boton component para evitar re-renderizar todo este component -- */}
+        <ButtonTheme></ButtonTheme>
       </div>
 
       <div className="columns">
@@ -41,8 +44,8 @@ function App() {
 
       <section className="section">
         <div className="buttons level-right">
-          <a className="button is-primary">Save</a>
-          <a className="button is-link">Submit</a>
+          <button className="button is-primary">Save</button>
+          <button className="button is-link">Submit</button>
         </div>
       </section>
     </div>
